@@ -56,6 +56,11 @@ p {
   /* margin-bottom: 10em; */
 }
 
+.banner-shaight {
+  background: transparent url('img/common/jungle.png');
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/common/jungle.png', sizingMethod='scale');
+}
+
   .banner-head {
       display: table-cell;
       vertical-align: middle;
