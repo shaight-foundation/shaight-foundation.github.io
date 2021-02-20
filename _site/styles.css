@@ -59,6 +59,11 @@ p {
 .banner-shaight {
   background: transparent url('img/common/jungle.png');
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/common/jungle.png', sizingMethod='scale');
+  display: flex;
+  font-size: 36px;
+  color: white;
+  justify-content: center;
+  align-items: center;
 }
 
   .banner-head {
