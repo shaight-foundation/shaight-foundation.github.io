@@ -194,6 +194,12 @@ p {
   font-weight: 500;
 }
 
+.paypal-button {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
 .footer {
   background: #111;
   color: #888;
