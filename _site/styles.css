@@ -6,6 +6,12 @@
   color: #526066;
 }
 
+.paypal-button {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
 h2, h3 {
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -192,6 +198,12 @@ p {
 .information-head {
   color: black;
   font-weight: 500;
+}
+
+.paypal-button {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
 }
 
 .footer {
