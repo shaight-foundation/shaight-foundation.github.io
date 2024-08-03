@@ -28,23 +28,32 @@
       }
 
       nav {
-        background-color: #2e8bc0;
-        padding: 0.5rem;
+      background-color: #2e8bc0;
+      padding: 0.5rem;
       }
 
       nav ul {
-        list-style-type: none;
-        display: flex;
-        justify-content: center;
+          list-style-type: none;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
       }
 
       nav ul li {
-        margin: 0 1rem;
+          margin: 0.5rem;
       }
 
       nav ul li a {
-        color: #fff;
-        text-decoration: none;
+          color: #fff;
+          text-decoration: none;
+          white-space: nowrap;
+      }
+
+      @media (max-width: 600px) {
+          nav ul {
+              flex-direction: column;
+              align-items: center;
+          }
       }
 
       main {
@@ -284,27 +293,58 @@
     </footer>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const carousel = document.querySelector('.carousel');
-        const items = carousel.querySelectorAll('.carousel-item');
-        const prevButton = document.querySelector('.carousel-button.prev');
-        const nextButton = document.querySelector('.carousel-button.next');
-        let currentIndex = 0;
+      document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.querySelector('.carousel');
+      const items = carousel.querySelectorAll('.carousel-item');
+      const prevButton = document.querySelector('.carousel-button.prev');
+      const nextButton = document.querySelector('.carousel-button.next');
+      let currentIndex = 0;
+      let startX, moveX;
 
-        function showItem(index) {
+      function showItem(index) {
           carousel.style.transform = `translateX(-${index * 100}%)`;
-        }
+      }
 
-        prevButton.addEventListener('click', function () {
+      function goToPrev() {
           currentIndex = (currentIndex - 1 + items.length) % items.length;
           showItem(currentIndex);
-        });
+      }
 
-        nextButton.addEventListener('click', function () {
+      function goToNext() {
           currentIndex = (currentIndex + 1) % items.length;
           showItem(currentIndex);
-        });
+      }
+
+      prevButton.addEventListener('click', goToPrev);
+      nextButton.addEventListener('click', goToNext);
+
+      // Touch events for swiping
+      carousel.addEventListener('touchstart', (e) => {
+          startX = e.touches[0].clientX;
       });
+
+      carousel.addEventListener('touchmove', (e) => {
+          moveX = e.touches[0].clientX;
+      });
+
+      carousel.addEventListener('touchend', () => {
+          if (startX - moveX > 50) {
+              // Swipe left
+              goToNext();
+          } else if (moveX - startX > 50) {
+              // Swipe right
+              goToPrev();
+          }
+      });
+
+      document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') {
+              goToPrev();
+          } else if (e.key === 'ArrowRight') {
+              goToNext();
+          }
+      });
+  });
     </script>
   </body>
 </html>
