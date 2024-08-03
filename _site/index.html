@@ -1,136 +1,310 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaight Foundation</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chiron Capital">
-  <title>Shaight Foundation</title>
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-  <link rel="stylesheet" href="./styles.css">
-</head>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
 
-<body>
+      header {
+        background-image: url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        text-align: center;
+        padding: 4rem 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
 
-  <div class="banner banner-shaight">
-    Shaight Foundation
-  </div>
-  <br />
-  <div class="l-content">
-    <div class="pricing-tables pure-g">
-      <div class="pure-u-1 pure-u-md-1-3">
-        <div class="pricing-table pricing-table-free">
-          <div class="pricing-table-header">
-            <h2>Foundation Loans</h2>
+      nav {
+        background-color: #2e8bc0;
+        padding: 0.5rem;
+      }
 
-            <span class="pricing-table-price">
-              268
-            </span>
+      nav ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 1rem;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      main {
+        padding-bottom: 2rem;
+      }
+
+      .hero {
+        background-color: #b1d4e0;
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      .content-section {
+        padding: 2rem 1rem;
+      }
+
+      .team {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        padding: 0 1rem;
+      }
+
+      .team-member {
+        text-align: center;
+      }
+
+      .team-member img,
+      .carousel-item img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .cta {
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 3rem 1rem;
+      }
+
+      .cta h2 {
+        margin-bottom: 1rem;
+      }
+
+      .paypal-button {
+        margin-top: 1rem;
+      }
+
+      .carousel-container {
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .carousel {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-item {
+        flex: 0 0 100%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .carousel-button.prev {
+        left: 10px;
+      }
+
+      .carousel-button.next {
+        right: 10px;
+      }
+
+      footer {
+        background-image: url('https://images.unsplash.com/photo-1551776315-d7d9d1997a9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        text-align: center;
+        padding: 4rem 1rem;
+        margin-top: 2rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+
+      @media (min-width: 768px) {
+        .hero {
+          padding: 4rem 2rem;
+        }
+
+        .content-section {
+          padding: 2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Shaight Foundation</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#donate">Donate</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="hero">
+        <h2>Empowering Entrepreneurs in Developing Countries</h2>
+        <p>Through programmatic rules-based microfinance loans, we've helped over 3,000 entrepreneurs since 2021.</p>
+      </section>
+      <section id="about" class="content-section">
+        <h2>About Us</h2>
+        <p>The Shaight Foundation is a charitable revolving fund that makes zero interest loans to people in need. We
+          believe that the
+          lack of liquidity in developing countries is one of the greatest challenges facing the modern world. In
+          2021,
+          we set out to solve that problem. We use machine learning to identify applicants who are good credit risks
+          and
+          who present good opportunities to enrich their communities. From there, we deploy the needed funds in the
+          most
+          fiscally prudent way possible, allowing us to scale our impact exponentially over time. </p>
+      </section>
+      <section id="team" class="content-section">
+        <h2>Meet the Team</h2>
+        <div class="team">
+          <div class="team-member">
+            <img src="img/common/josh.png" alt="Josh Hight">
+            <h3>Josh Hight</h3>
+            <p>President</p>
+          </div>
+          <div class="team-member">
+            <img src="img/common/daniel.png" alt="Daniel Shafer">
+            <h3>Daniel Shafer</h3>
+            <p>Treasurer</p>
+          </div>
+          <div class="team-member">
+            <img src="img/common/cameron.png" alt="Cameron Carter">
+            <h3>Cameron Carter</h3>
+            <p>Director</p>
+          </div>
+          <div class="team-member">
+            <img src="img/common/noah.png" alt="Noah Morrison">
+            <h3>Noah Morrison</h3>
+            <p>Director</p>
           </div>
         </div>
-      </div>
-
-      <div class="pure-u-1 pure-u-md-1-3">
-        <div class="pricing-table pricing-table-biz pricing-table-selected">
-          <div class="pricing-table-header">
-            <h2>Member Loans</h2>
-
-            <span class="pricing-table-price">
-              633
-            </span>
+      </section>
+      <section id="testimonials" class="content-section">
+        <h2>Testimonials</h2>
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="carousel-item">
+              <img src="img/common/jalene.png" alt="Jalene">
+              <p>Jalene used her loan to purchase canned goods, chips, personal care products, and other merchandise to
+                sell at her store.</p>
+            </div>
+            <div class="carousel-item">
+              <img src="img/common/helen.png" alt="Helen">
+              <p>Helen used her loan to purchase ingredients for her food production business.</p>
+            </div>
+            <div class="carousel-item">
+              <img src="img/common/edita.png" alt="Edita">
+              <p>Edita used her loan to purchase additional items like canned goods, chips, personal care products, etc.
+                to sell in her store.</p>
+            </div>
+            <div class="carousel-item">
+              <img src="img/common/elma.png" alt="Elma">
+              <p>Elma used her loan to purchase materials for the maintenance of her motorcycle.</p>
+            </div>
+            <div class="carousel-item">
+              <img src="img/common/imelda.png" alt="Imelda">
+              <p>Imelda used her loan to purchase additional boxes of fish to sell.</p>
+            </div>
+            <div class="carousel-item">
+              <img src="img/common/teresa.png" alt="Teresa">
+              <p>Teresa used her loan to purchase sacks of rice grains to sell.</p>
+            </div>
+            <div class="carousel-item">
+              <img src="img/common/concesa.png" alt="Concesa">
+              <p>Concesa used her loan to purchase feed and other supplies for her pig fattening business.</p>
+            </div>
+            <div class="carousel-item">
+              <img src="img/common/nelayda.png" alt="Nelayda">
+              <p>Nelayda used her loan to purchase recyclable scrap materials to sell.</p>
+            </div>
+            <div class="carousel-item">
+              <img src="img/common/erlinda.png" alt="Erlinda">
+              <p>Erlinda used her loan to purchase ingredients for her food production business.</p>
+            </div>
+            <div class="carousel-item">
+              <img src="img/common/librada.png" alt="Librada">
+              <p>Librada used her loan to purchase feed and other supplies to raise her cow.</p>
+            </div>
           </div>
+          <button class="carousel-button prev">&lt;</button>
+          <button class="carousel-button next">&gt;</button>
         </div>
-      </div>
-
-      <div class="pure-u-1 pure-u-md-1-3">
-        <div class="pricing-table pricing-table-enterprise">
-          <div class="pricing-table-header">
-            <h2>Since</h2>
-
-            <span class="pricing-table-price">
-              2021
-            </span>
-          </div>
+      </section>
+      <section id="contact" class="content-section">
+        <h2>Contact Us</h2>
+        <p>Email: daniel [at] shaight.org</p>
+        <p>Address: 3701 Sacramento St, 151, San Francisco, CA 94118</p>
+      </section>
+      <section id="donate" class="cta">
+        <h2>Support Our Mission</h2>
+        <p>Your donation helps us empower more entrepreneurs in developing countries.</p>
+        <div class="paypal-button">
+          <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="2X33D6CZGGBSJ" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit"
+              title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+          </form>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Shaight Foundation. All rights reserved.</p>
+    </footer>
 
-    <div class="information pure-g">
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="l-box">
-          <h3 class="information-head">Programatic rules-based financing</h3>
-          <p>
-            The Shaight Foundation is a charitable revolving fund that makes zero interest loans to people in need. We believe that the
-            lack of liquidity in developing countries is one of the greatest challenges facing the modern world. In 2021,
-            we set out to solve that problem. We use machine learning to identify applicants who are good credit risks and
-            who present good opportunities to enrich their communities. From there, we deploy the needed funds in the most
-            fiscally prudent way possible, allowing us to scale our impact exponentially over time. If you'd like to get
-            involved, please use the links below to donate, or support at no cost to you by shopping on Amazon Smile with
-            the Foundation as your selected charity by using
-            <a href="https://smile.amazon.com/ch/86-1839872">our referral link</a>.
-          </p>
-          <div class="paypal-button">
-            <form action="https://www.paypal.com/donate" method="post" target="_top">
-              <input type="hidden" name="hosted_button_id" value="2X33D6CZGGBSJ" />
-              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
-                alt="Donate with PayPal button" />
-              <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-            </form>
-          </div>
-          <div id="cocatalyst-container" style="margin-left: auto; margin-right: auto;"></div>
-          <script src="https://static.cocatalyst.org/jumpstart/button.js"></script>
-          <script>
-            cocatalystButton.render({
-              referrer: "eyJjaGFyaXR5X25hbWUiOiJTaGFpZ2h0IEZvdW5kYXRpb24iLCJjaGFyaXR5X3dlYnNpdGUiOiJzaGFpZ2h0Lm9yZyIsImNoYXJpdHlfZW1haWwiOiJmb3VuZGF0aW9uQGRhbmllbHNoYWZlci5jb20iLCJjaGFyaXR5X3RpbiI6Ijg2MTgzOTg3MiIsInNob3J0X3VybCI6InNoYWlnaHQiLCJjaGFyaXR5X3ZvbHVtZSI6IjEwMCJ9",
-              size: "medium",
-              color: "gold",
-              shape: "pill",
-            })
-          </script>
-        </div>
-      </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const carousel = document.querySelector('.carousel');
+        const items = carousel.querySelectorAll('.carousel-item');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+        let currentIndex = 0;
 
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="l-box">
-          <h3 class="information-head">Meet the Team</h3>
-          <div class="l-box pure-u-1-1 pure-u-md-1-2 pure-u-lg-1-3 tile-wrapper">
-            <img class="pure-img is-center" style="margin-top:2.2em;margin-left:2.2em;border-radius: 50%;" src="img/common/josh.png"
-            />
-            <br />
-            <div class="teammate-name">Josh Hight, cofounder</div>
-          </div>
-          <div class="l-box pure-u-1-1 pure-u-md-1-2 pure-u-lg-1-3 tile-wrapper">
-            <img class="pure-img is-center" style="margin-top:2.2em;margin-left:2.2em;border-radius: 50%;" src="img/common/daniel.png"
-            />
-            <br />
-            <div class="teammate-name">Daniel Shafer, cofounder</div>
-          </div>
-          <div class="l-box pure-u-1-1 pure-u-md-1-2 pure-u-lg-1-3 tile-wrapper">
-            <img class="pure-img is-center" style="margin-top:2.2em;margin-left:2.2em;border-radius: 50%;" src="img/common/cameron.png"
-            />
-            <br />
-            <div class="teammate-name">Cameron Carter, director</div>
-          </div>
-          <div class="l-box pure-u-1-1 pure-u-md-1-2 pure-u-lg-1-3 tile-wrapper">
-            <img class="pure-img is-center" style="margin-top:2.2em;margin-left:2.2em;border-radius: 50%;" src="img/common/noah.png"
-            />
-            <br />
-            <div class="teammate-name">Noah Morrison, director</div>
-          </div>
-        </div>
-      </div>
-    </div>
+        function showItem(index) {
+          carousel.style.transform = `translateX(-${index * 100}%)`;
+        }
 
+        prevButton.addEventListener('click', function () {
+          currentIndex = (currentIndex - 1 + items.length) % items.length;
+          showItem(currentIndex);
+        });
 
-  </div>
-
-  <div class="footer l-box">
-    <p>
-      Made with &hearts; in San Francisco. Copyright
-      <a href="#">Shaight Foundation</a> 2021
-    </p>
-  </div>
-</body>
-
+        nextButton.addEventListener('click', function () {
+          currentIndex = (currentIndex + 1) % items.length;
+          showItem(currentIndex);
+        });
+      });
+    </script>
+  </body>
 </html>
