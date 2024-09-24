@@ -27,25 +27,6 @@
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
       }
 
-      .donation-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        margin-top: 1rem;
-      }
-
-      .guidestar-seal img {
-        max-width: 100px;
-        height: auto;
-      }
-
-      @media (max-width: 600px) {
-        .donation-container {
-          flex-direction: column;
-        }
-      }
-
       nav {
       background-color: #2e8bc0;
       padding: 0.5rem;
@@ -314,21 +295,28 @@
         <h2>Support Our Mission</h2>
         <p>Your donation helps us empower more entrepreneurs in developing
           countries.</p>
-        <div class="donation-container">
-          <div class="paypal-button">
-            <!-- PayPal button form here -->
-          </div>
-          <div class="guidestar-seal">
-            <a
-              href="https://www.guidestar.org/profile/shared/5d690b15-edf7-4472-ab95-5cee9c7d0b06"
-              target="_blank">
-              <img src="https://widgets.guidestar.org/TransparencySeal/9957801"
-                alt="GuideStar Transparency Seal" />
-            </a>
-          </div>
+        <div class="paypal-button">
+          <form action="https://www.paypal.com/donate" method="post"
+            target="_top">
+            <input type="hidden" name="hosted_button_id"
+              value="2X33D6CZGGBSJ" />
+            <input type="image"
+              src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+              border="0" name="submit"
+              title="PayPal - The safer, easier way to pay online!"
+              alt="Donate with PayPal button" />
+            <img alt border="0"
+              src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1"
+              height="1" />
+          </form>
         </div>
       </section>
-
+      <section>
+        <a
+          href="https://www.guidestar.org/profile/shared/5d690b15-edf7-4472-ab95-5cee9c7d0b06"
+          target="_blank"><img
+            src="https://widgets.guidestar.org/TransparencySeal/9957801" /></a>
+      </section>
     </main>
     <footer>
       <p>&copy; 2024 Shaight Foundation. All rights reserved.</p>
