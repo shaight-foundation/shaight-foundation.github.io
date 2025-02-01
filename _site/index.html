@@ -326,11 +326,13 @@
       </section>
     </main>
     <footer>
-      <p>&copy; 2024 Shaight Foundation. All rights reserved.</p>
+      <p>&copy; <span id="currentYear"></span> Shaight Foundation. All rights
+        reserved.</p>
     </footer>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
       const carousel = document.querySelector('.carousel');
       const items = carousel.querySelectorAll('.carousel-item');
       const prevButton = document.querySelector('.carousel-button.prev');
